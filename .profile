@@ -3,15 +3,19 @@ export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-eval "$(rbenv init -)"
 alias log="adb logcat -v time | grep -i"
-alias in="instruments -s | grep '[a-zA-Z0-9]\{5\}[a-zA-Z0-9]\{15\}'"
-# | sed 's/.*\[\([^]]*\)\].*/\1/g'
-alias rv="rvictl -s"
-alias visual="log | grep -i visual "
-alias caid="log | grep -i caid "
-alias signin="log 'Message Event : SignIn --' -A 12"
-alias msgbus="log messagebus"
+alias grbs='git fetch upstream ; git rebase upstream/develop'
+alias log="adb logcat -v time | grep -i"
+alias l="ls"
+alias ll="ls -l"
+alias gcc="gcc -w"
+alias glog="git log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative"
+alias xcv='xcodebuild -version'
+alias adbin='adb install -r'
+alias clearappsios='ios-deploy -B | grep youi | xargs -t -I {} ios-deploy --uninstall_only --bundle_id {}'
+alias clearappsandroid="adb shell pm list packages -f| grep -i youi | sed 's/.*=//g' | xargs -t -I {} adb shell pm uninstall {}"
+alias gcln='git clean -fdx'
+alias sdb=/Users/ahmadaltamimi/tizen-studio/tools/sdb
 
 
 export JAVA_HOME=$(/usr/libexec/java_home)
