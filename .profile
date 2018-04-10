@@ -7,16 +7,6 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PATH=/usr/local/mysql/bin:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home)
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export TIZEN_SDK_HOME=/Users/ahmadaltamimi/tizen-studio
-export ANDROID_NDK_HOME=/Users/ahmadaltamimi/android-ndk-r14b
-export TIZEN_NACL_SDK_HOME=/Users/ahmadaltamimi/Downloads/pepper_47
-export DEVELOPMENT_TEAM_ID=W4E9HL2DXS
-export HOMEBREW_GITHUB_API_TOKEN=7730035f5df3d5b3bd24bd7a47182e4d0df9490b
-export YOUIENGINE_HOME=$HOME/DTV/dtvmobile/youiengine
-export FABRIC_OSX_HOME=$HOME/com.twitter.crashlytics.mac-manual
-export FABRIC_IOS_HOME=$HOME/com.crashlytics.ios-manual
-export GOOGLEANALYTICS_HOME=$HOME/GoogleAnalyticsServicesiOS_3.17
 
 
 source "${GITAWAREPROMPT}/main.sh"
@@ -31,7 +21,6 @@ alias buildios='start=`date +%s`;./generate.rb -p ios; ./build.rb -b build/ios; 
 alias charles='/Applications/Charles.app/Contents/MacOS/Charles &'
 alias clearappsandroid="adb shell pm list packages -f| grep -i youi | sed 's/.*=//g' | xargs -t -I {} adb shell pm uninstall {}"
 alias clearappsios='ios-deploy -B | grep youi | xargs -t -I {} ios-deploy --uninstall_only --bundle_id {}'
-alias dtv='cd ~/DTV/dtvmobile/dtv'
 alias gcc="gcc -w"
 alias gcln='git clean -fdx'
 alias gdiff='git difftool -t opendiff'
@@ -41,10 +30,6 @@ alias iosin='temp=`find . -iname *.app`; idevice_id -l | xargs -I {} ios-deploy 
 alias l="ls"
 alias ll="ls -l"
 alias log="adb logcat -v time | grep -i"
-alias tcmenv='export YOUIENGINE_HOME=$HOME/TurnerInternational/youiengine; export YOUIENGINEONE_HOME=$HOME/TurnerInternational/viper; export TVSDK_ANDROID_HOME=$HOME/TurnerInternational/thirdparty/TVSDK_Android_1.4.39.1744; export DEVELOPMENT_TEAM_ID=QSFZLJUKHR; export TVSDK_IOS_HOME=$HOME/TurnerInternational/thirdparty/TVSDK_iOS_1.4.39.43; export FABRIC_IOS_HOME=$HOME/TurnerInternational/thirdparty/com.twitter.crashlytics.ios-manual; export FACEBOOK_IOS_HOME=$HOME/TurnerInternational/thirdparty/FacebookSDKs-iOS-4.18.0'
-alias xcode8="sudo xcode-select -s /Applications/Xcode8.app/Contents/Developer"
-alias xcode9="sudo xcode-select -s /Applications/Xcode.app/Contents/Developer"
-alias xcv='xcodeuild -version'
 alias sc='python ~/screenrecord.py'
 alias stash='git stash'
 alias pop='git stash pop'
