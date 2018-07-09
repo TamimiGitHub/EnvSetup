@@ -1,5 +1,4 @@
 #Exports
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
 export PS1='\[\033[01;32m\]\u@\[$txtcyn\]$git_branch:\[\033[01;34m\]\w\[\033[00m\]\$ '
 export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
@@ -7,10 +6,12 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PATH=/usr/local/mysql/bin:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home)
-
-
-source "${GITAWAREPROMPT}/main.sh"
 eval "$(rbenv init -)"
+
+#brew install git bash-completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
 
 # Aliases
 alias adbclear="adb shell pm list packages -f| grep -i youi | sed 's/.*=//g' | xargs -t -I {} adb shell pm clear {}"
